@@ -4,7 +4,7 @@ import defaultElements from "./createForm.js"
 
 
 
-
+const searchInputL = document.querySelector("#searchInputEl")
 const entryList = document.querySelector("#cardLog")
 
 export default {
@@ -20,6 +20,19 @@ export default {
             }
         })
     },
+    searchListener() {
+        searchInputL.addEventListener("keypress", event => {
+            if (event.charCode === 13) {
+                const searchMatch = event.target.value
+                    console.log(searchMatch, "searchMatch")
+               API.searchAllCards(searchMatch)
+                .then(response => {
+                    renderCards(response)}
+                    )
+            }
+        })
+
+    },
     editListener() {
         entryList.addEventListener("click", event => {
         if(event.target.id.startsWith("editCard--")) {
@@ -33,7 +46,7 @@ export default {
                     defaultElements.buildAndAppendForm("edit") 
 
                 document.querySelector("#cardID").value = response.id;
-                document.querySelector("#merchantName").value = response.merchantName;
+                document.querySelector("#type").value = response.merchantName;
                 document.querySelector("#creditLimit").value = response.creditLimit;
                 document.querySelector("#creditUsed").value = response.creditUsed;
                 document.querySelector("#travelPoints").value = response.travelPoints;
@@ -42,12 +55,15 @@ export default {
                 console.log(response, "forE")
             
             
+            
+        
+            
         const saveChanges = document.querySelector("#saveBtn")
         console.log(saveChanges)
         saveChanges.addEventListener("click", event => {
                 console.log(event, "yo")
                 let cardID = document.querySelector("#cardID").value
-                const mer = document.querySelector("#merchantName").value
+                const mer = document.querySelector("#type").value
                 const limit = document.querySelector("#creditLimit").value
                 const used = document.querySelector("#creditUsed").value
                 const travel = document.querySelector("#travelPoints").value
@@ -69,12 +85,12 @@ export default {
                 API.getCardEntries()
                 .then(response => renderCards(response))
             })    
-            })
+        })
 
 
-            })
-
-            }
+      })  
+      .then((document.documentElement.scrollTop = 0))
+    }
             updateFormFields(cardToEdit)
             
 

@@ -17,6 +17,7 @@ const makeCardEntryComponent = (cardEntry) => {
     Delete Card
     </button>
     </fieldset>
+   
     `
 }
 

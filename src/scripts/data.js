@@ -1,5 +1,5 @@
 
-
+const baseURL = "http://localhost:3000/cards"
 
 
 const API = {
@@ -22,12 +22,12 @@ const API = {
     })
             .then(response => response.json())       
         },
-        getSingleCardEntry(cardId) {
+    getSingleCardEntry(cardId) {
             // GET the card entry with the specified ID number
             return fetch(`http://localhost:3000/cards/${cardId}` )
                 .then(response => response.json())
         },
-        editSingleJournalEntry(cardId, entry){
+    editSingleJournalEntry(cardId, entry){
             return fetch(`http://localhost:3000/cards/${cardId}`, {
                 method: "PUT",
                 headers: {
@@ -35,6 +35,10 @@ const API = {
                 },
                 body: JSON.stringify(entry)
                 })
+            },
+    searchAllCards(userInput) {
+                return fetch(`${baseURL}??&&q=${userInput}` )
+                    .then(response => response.json())
             },
     }
     

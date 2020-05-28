@@ -3,6 +3,8 @@ import saveObject from "./postEntry.js"
 
 
 const form = document.querySelector("#formContainer")
+
+
 console.log(form)
 
 const htmlElements = {
@@ -14,7 +16,12 @@ const htmlElements = {
         <input type="hidden" id="cardID" value="" />
         <fieldset>
         <label for="merchantName">Merchant Name</label>
-            <input id="merchantName" name="merchantName" type="text">
+            <select id="type" name="merchantName">
+                <option value="Visa">Visa</option>
+                <option value="MasterCard">MasterCard</option>
+                <option value="Discovery">Discovery</option>
+                <option value="American Express">American Express</option>
+            </select>
         </fieldset>
         <fieldset>
         <label for="creditLimit">Credit Limit</label>
@@ -47,6 +54,18 @@ const htmlElements = {
             const saveBtnEl = document.querySelector("#recordBtn")
             saveBtnEl.addEventListener("click",saveObject.postEntry)
         }
+
+    },
+    buildAndAppendSearch () {
+        const searchHtml = 
+        `
+        <fieldset>
+            <legend>Search Credit Cards</legend>
+            <input type="search" name="search" id="searchInput"</input>
+        </fieldset>
+        `
+        const search = document.querySelector("#searchInputEl")
+        search.innerHTML = searchHtml
 
     }
 

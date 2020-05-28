@@ -5,7 +5,7 @@ import events from "./events.js"
 
 
 htmlElements.buildAndAppendForm()
-
+htmlElements.buildAndAppendSearch()
 
 
 
@@ -15,5 +15,7 @@ API.getCardEntries()
 
     events.editListener()
     events.deleteListener()
+    events.searchListener()
+    
 
 

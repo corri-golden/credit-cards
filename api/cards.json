@@ -1,22 +1,22 @@
 {
   "cards": [
     {
-      "id": 1,
       "merchantName": "Visa",
       "creditLimit": "$8,000",
-      "creditUsed": "$2,000",
-      "travelPoints": "50,000",
+      "creditUsed": "$4,000",
+      "travelPoints": "50,001",
       "interestRate": "%18.00",
-      "pointsSpan": "Three Months"
+      "pointsSpan": "Four Months",
+      "id": 1
     },
     {
-      "id": 2,
-      "merchantName": "Capital One",
+      "merchantName": "Discovery",
       "creditLimit": "$6,000",
       "creditUsed": "$1,000",
       "travelPoints": "30,000",
-      "interestRate": "%15.66",
-      "pointsSpan": "Four Months"
+      "interestRate": "%15.68",
+      "pointsSpan": "Four Months",
+      "id": 2
     },
     {
       "id": 3,
@@ -28,12 +28,12 @@
       "pointsSpan": "Three Months"
     },
     {
-      "merchantName": "me",
-      "creditLimit": "me",
-      "creditUsed": "me",
-      "travelPoints": "me",
-      "interestRate": "me",
-      "pointsSpan": "me",
+      "merchantName": "MasterCard",
+      "creditLimit": "1,000",
+      "creditUsed": "50",
+      "travelPoints": "40,000",
+      "interestRate": "%15.00",
+      "pointsSpan": "Five Months",
       "id": 4
     }
   ]
